@@ -19,7 +19,11 @@ export default class LinkedList {
     currentPointer.next = newNode;
   }
   //adds a new node containing value to the start of the list
-  prepend(value) {}
+  prepend(value) {
+    const newNode = new Node(value, this.#head);
+    this.#size++;
+    this.#head = newNode;
+  }
   //returns the total number of nodes in the list
   size() {
     return this.#size;
