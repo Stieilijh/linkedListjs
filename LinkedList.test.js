@@ -21,3 +21,12 @@ test("Prepending an element to a list ", () => {
   expect(list.tail()).toBe("a");
   expect(list.size()).toBe(2);
 });
+test("Adding elements and removing the last element (pop)", () => {
+  let list = new LinkedList();
+  list.append(1);
+  list.append(2);
+  list.append(3);
+  list.pop();
+  expect(list.tail()).toBe(2);
+  expect(list.size()).toBe(2);
+});

@@ -43,7 +43,14 @@ export default class LinkedList {
   //returns the node at the given index
   at(index) {}
   //removes the last element from the list
-  pop() {}
+  pop() {
+    let currentPointer = this.#head;
+    while (currentPointer.next.getValue() != this.tail()) {
+      currentPointer = currentPointer.next;
+    }
+    currentPointer.next = null;
+    this.#size--;
+  }
   /*returns true if the passed in value is in the list and otherwise returns
    false.*/
   contains(value) {}
