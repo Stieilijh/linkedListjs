@@ -104,9 +104,9 @@ export default class LinkedList {
     this.#size++;
     if (index === 0) {
       this.#head = newNode;
-    } else {
-      this.#findNode(index - 1).next = newNode;
+      return;
     }
+    this.#findNode(index - 1).next = newNode;
   }
   /*that removes the node at the given index.*/
   removeAt(index) {
@@ -116,6 +116,18 @@ export default class LinkedList {
       throw new Error(
         `Index cannot be more than ${this.#size} for remove method`
       );
+
+    if (index === 0) {
+      this.#head = this.#findNode(1);
+      this.#size--;
+      return;
+    }
+    if (index === this.#size) {
+      this.pop();
+      return;
+    }
+    this.#findNode(index - 1).next = this.#findNode(index + 1);
+    this.#size--;
   }
   //Find Node at index
   #findNode(index) {

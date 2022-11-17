@@ -74,8 +74,24 @@ test("Checking all possible outcomes for the insertAt(value,index) function", ()
   list.append(true);
   list.insertAt(false, 0);
   list.insertAt("ha", 2);
+  list.insertAt("ty", list.size());
   expect(list.at(0)).toBe(false);
   expect(list.at(1)).toBe(true);
   expect(list.at(2)).toBe("ha");
-  expect(list.size()).toBe(3);
+  expect(list.at(list.size() - 1)).toBe("ty");
+  expect(list.size()).toBe(4);
+});
+test("Checking the RemoveAt(index)", () => {
+  let list = new LinkedList();
+  list.append(1);
+  list.append(2);
+  list.append(true);
+  list.append(3);
+  list.append(4);
+  list.removeAt(0); //remove first element
+  list.removeAt(list.size()); //remove last element
+  list.removeAt(1); //remove middle element
+  expect(list.size()).toBe(2);
+  expect(list.at(0)).toBe(2);
+  expect(list.at(1)).toBe(3);
 });
