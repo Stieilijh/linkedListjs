@@ -72,7 +72,12 @@ export default class LinkedList {
   }
   //returns the index of the node containing value, or null if not found.
   find(value) {
-    if (!this.contains(value)) return null;
+    for (let i = 0; i < this.#size; i++) {
+      if (this.at(i) === value) {
+        return i;
+      }
+    }
+    return null;
   }
   /*represents your LinkedList objects as strings, so you can print them out 
   and preview them in the console.
