@@ -93,7 +93,37 @@ export default class LinkedList {
     return str;
   }
   /*Inserts a new node with the provided value at the given index.*/
-  insertAt(value, index) {}
+  insertAt(value, index) {
+    if (index < 0)
+      throw new Error("Index cannot be less than 0 for insert method");
+    else if (index > this.#size)
+      throw new Error(
+        `Index cannot be more than ${this.#size} for insert method`
+      );
+    const newNode = new Node(value, this.#findNode(index));
+    this.#size++;
+    if (index === 0) {
+      this.#head = newNode;
+    } else {
+      this.#findNode(index - 1).next = newNode;
+    }
+  }
   /*that removes the node at the given index.*/
-  removeAt(index) {}
+  removeAt(index) {
+    if (index < 0)
+      throw new Error("Index cannot be less than 0 for remove method");
+    else if (index > this.#size)
+      throw new Error(
+        `Index cannot be more than ${this.#size} for remove method`
+      );
+  }
+  //Find Node at index
+  #findNode(index) {
+    let currentPointer = this.#head;
+    while (index > 0) {
+      currentPointer = currentPointer.next;
+      index--;
+    }
+    return currentPointer;
+  }
 }

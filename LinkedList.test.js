@@ -69,3 +69,13 @@ test("Checking the toString()", () => {
   list.append("hello");
   expect(list.toString()).toBe(" ( true ) ->  ( 2 ) ->  ( hello ) -> null ");
 });
+test("Checking all possible outcomes for the insertAt(value,index) function", () => {
+  let list = new LinkedList();
+  list.append(true);
+  list.insertAt(false, 0);
+  list.insertAt("ha", 2);
+  expect(list.at(0)).toBe(false);
+  expect(list.at(1)).toBe(true);
+  expect(list.at(2)).toBe("ha");
+  expect(list.size()).toBe(3);
+});
