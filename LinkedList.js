@@ -40,8 +40,16 @@ export default class LinkedList {
     }
     return currentPointer.getValue();
   }
-  //returns the node at the given index
-  at(index) {}
+  //returns the node at the given index and returns null if the index has no nodes
+  at(index) {
+    if (index > this.#size || index < 0) return null;
+    let currentPointer = this.#head;
+    while (index > 0) {
+      currentPointer = currentPointer.next;
+      index--;
+    }
+    return currentPointer.getValue();
+  }
   //removes the last element from the list
   pop() {
     let currentPointer = this.#head;
@@ -63,7 +71,9 @@ export default class LinkedList {
     return false;
   }
   //returns the index of the node containing value, or null if not found.
-  find(value) {}
+  find(value) {
+    if (!this.contains(value)) return null;
+  }
   /*represents your LinkedList objects as strings, so you can print them out 
   and preview them in the console.
   The format should be: ( value ) -> ( value ) -> ( value ) -> null*/

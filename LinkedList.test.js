@@ -40,3 +40,14 @@ test("Checking if contains() works well", () => {
   expect(list.contains(3)).toBe(true);
   expect(list.contains(4)).toBe(false);
 });
+test("Checking the at() ", () => {
+  let list = new LinkedList();
+  list.append(1);
+  list.append(2);
+  list.append(3);
+  expect(list.at(0)).toBe(1);
+  expect(list.at(1)).toBe(2);
+  expect(list.at(2)).toBe(3);
+  expect(list.at(-1)).toBe(null);
+  expect(list.at(9)).toBe(null);
+});
