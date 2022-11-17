@@ -53,7 +53,15 @@ export default class LinkedList {
   }
   /*returns true if the passed in value is in the list and otherwise returns
    false.*/
-  contains(value) {}
+  contains(value) {
+    let currentPointer = this.#head;
+    while (currentPointer.next != null) {
+      if (currentPointer.getValue() == value) return true;
+      currentPointer = currentPointer.next;
+    }
+    if (currentPointer.getValue() == value) return true;
+    return false;
+  }
   //returns the index of the node containing value, or null if not found.
   find(value) {}
   /*represents your LinkedList objects as strings, so you can print them out 

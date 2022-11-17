@@ -30,3 +30,13 @@ test("Adding elements and removing the last element (pop)", () => {
   expect(list.tail()).toBe(2);
   expect(list.size()).toBe(2);
 });
+test("Checking if contains() works well", () => {
+  let list = new LinkedList();
+  list.append(1);
+  list.append(2);
+  list.append(3);
+  expect(list.contains(1)).toBe(true);
+  expect(list.contains(2)).toBe(true);
+  expect(list.contains(3)).toBe(true);
+  expect(list.contains(4)).toBe(false);
+});
