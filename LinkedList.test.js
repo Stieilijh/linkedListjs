@@ -62,3 +62,10 @@ test("Checking the find(value) ", () => {
   expect(list.find(-1)).toBe(null);
   expect(list.find(9)).toBe(null);
 });
+test("Checking the toString()", () => {
+  let list = new LinkedList();
+  list.append(true);
+  list.append(2);
+  list.append("hello");
+  expect(list.toString()).toBe(" ( true ) ->  ( 2 ) ->  ( hello ) -> null ");
+});

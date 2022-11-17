@@ -82,7 +82,16 @@ export default class LinkedList {
   /*represents your LinkedList objects as strings, so you can print them out 
   and preview them in the console.
   The format should be: ( value ) -> ( value ) -> ( value ) -> null*/
-  toString() {}
+  toString() {
+    let str = "";
+    let currentPointer = this.#head;
+    while (currentPointer.next != null) {
+      str += " ( " + currentPointer.getValue() + " ) -> ";
+      currentPointer = currentPointer.next;
+    }
+    str += " ( " + currentPointer.getValue() + " ) -> null ";
+    return str;
+  }
   /*Inserts a new node with the provided value at the given index.*/
   insertAt(value, index) {}
   /*that removes the node at the given index.*/
