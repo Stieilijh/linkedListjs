@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2"
+  },
+  "dependencies": {
+    "jest": "^29.3.1"
+  },
+  "name": "linkedlistjs",
+  "description": "",
+  "version": "1.0.0",
+  "main": "LinkedList.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stieilijh/linkedListjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stieilijh/linkedListjs/issues"
+  },
+  "homepage": "https://github.com/Stieilijh/linkedListjs#readme"
+}
